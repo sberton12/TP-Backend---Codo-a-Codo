@@ -1,0 +1,25 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sberton12/TP-Backend---Codo-a-Codo.git"
+  },
+  "keywords": [],
+  "author": "Sergio Berton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sberton12/TP-Backend---Codo-a-Codo/issues"
+  },
+  "homepage": "https://github.com/sberton12/TP-Backend---Codo-a-Codo#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mysql2": "^3.10.2",
+    "nodemon": "^3.1.4"
+  }
+}
