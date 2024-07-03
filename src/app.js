@@ -1,9 +1,11 @@
 const express = require('express');
+
 const userRoutes = require('../routes/userRoutes');
 
 const PORT = 3000;
 
 const app = express();
+
 
 app.use(express.json());
 
@@ -14,6 +16,7 @@ app.get('/prueba',(req,res)=>{
 
 
 app.use(express.json()); // Middleware para parsear JSON
+
 
 // Ruta de prueba
 app.get('/', (req, res) => {

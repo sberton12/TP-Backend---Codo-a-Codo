@@ -27,18 +27,18 @@
 -- -----------------------------------------------------
 
 INSERT INTO `mydb23`.`userstable` 
-(`idUsersTable`, `username`, `name`, `surrname`, `email`, `password`, `created_at`, `updated_at`) 
-VALUES ('1', 'ser103', 'Sergio', 'Berton', 'ser@gmail.com', '1234', '2023-02-05', '2023-02-20');
+(`idUsersTable`, `username`, `name`, `surrname`, `email`, `password`) 
+VALUES ('1', 'ser103', 'Sergio', 'Berton', 'ser@gmail.com', '1234');
 
 
 INSERT INTO `mydb23`.`userstable` 
-(`idUsersTable`, `username`, `name`, `surrname`, `email`, `password`, `created_at`, `updated_at`) 
-VALUES ('2', 'car50', 'Carla', 'Blanco', 'carla@gmail.com', '4312', '2023-02-05', '2023-02-20');
+(`idUsersTable`, `username`, `name`, `surrname`, `email`, `password`) 
+VALUES ('2', 'car50', 'Carla', 'Blanco', 'carla@gmail.com', '4312');
 
 
 INSERT INTO `mydb23`.`userstable` 
-(`idUsersTable`, `username`, `name`, `surrname`, `email`, `password`, `created_at`, `updated_at`) 
-VALUES ('3', 'lads50', 'pepe', 'Simone', 'simon@gmail.com', '43121', '2023-02-05', '2023-02-20');
+(`idUsersTable`, `username`, `name`, `surrname`, `email`, `password`) 
+VALUES ('3', 'lads50', 'pepe', 'Simone', 'simon@gmail.com', '43121');
 
 
 -- -----------------------------------------------------
@@ -46,31 +46,31 @@ VALUES ('3', 'lads50', 'pepe', 'Simone', 'simon@gmail.com', '43121', '2023-02-05
 -- -----------------------------------------------------
 
 INSERT INTO `mydb23`.`commentstable` 
-(`idCommentsTable`, `user_id`, `content`, `created_at`, `updated_at`, `toors_id`, `punctuation`) 
-VALUES ('1', '1', 'Muy buen vieje!! Muy recomendado', '2023-03-23', '2023-03-30', '1', '4.3');
+(`idCommentsTable`, `user_id`, `content`, `toors_id`, `punctuation`) 
+VALUES ('1', '1', 'Muy buen vieje!! Muy recomendado', '1', '4.3');
 
 INSERT INTO `mydb23`.`commentstable` 
-(`idCommentsTable`, `user_id`, `content`, `created_at`, `updated_at`, `toors_id`, `punctuation`) 
-VALUES ('2', '3', 'Excelente servicio', '2023-03-23', '2023-03-30', '2', '4.5');
+(`idCommentsTable`, `user_id`, `content`, `toors_id`, `punctuation`) 
+VALUES ('2', '3', 'Excelente servicio', '2', '4.5');
 
 INSERT INTO `mydb23`.`commentstable` 
-(`idCommentsTable`, `user_id`, `content`, `created_at`, `updated_at`, `toors_id`, `punctuation`) 
-VALUES ('3', '2', 'Excelente ', '2023-03-23', '2023-03-30', '3', '3');
+(`idCommentsTable`, `user_id`, `content`, `toors_id`, `punctuation`) 
+VALUES ('3', '2', 'Excelente ', '3', '3');
 
 
 INSERT INTO `mydb23`.`commentstable` 
-(`idCommentsTable`, `user_id`, `content`, `created_at`, `updated_at`, `toors_id`, `punctuation`) 
-VALUES ('4', '2', 'Unos genios!!!', '2023-03-23', '2023-03-30', '1', '4.9');
+(`idCommentsTable`, `user_id`, `content`, `toors_id`, `punctuation`) 
+VALUES ('4', '2', 'Unos genios!!!', '1', '4.9');
 
 
 -- -----------------------------------------------------
 -- Table `photostable`
 -- -----------------------------------------------------
 INSERT INTO `mydb23`.`photostable` 
-(`idPhotosTable`, `travels_id`, `title`, `description`, `file_path`, `upload_date`) 
-VALUES ('1', '2', 'El hornocal en su magnificencia', 'Excelente', '1', '2024-01-02');
+(`idPhotosTable`, `travels_id`, `title`, `description`, `file_path`) 
+VALUES ('1', '2', 'El hornocal en su magnificencia', 'Excelente', '1');
 
 INSERT INTO `mydb23`.`photostable` 
-(`idPhotosTable`, `travels_id`, `title`, `description`, `file_path`, `upload_date`) 
-VALUES ('2', '1', 'Cachi', 'Excelente', '4', '2024-01-20');
+(`idPhotosTable`, `travels_id`, `title`, `description`, `file_path`) 
+VALUES ('2', '1', 'Cachi', 'Excelente', '4');
 

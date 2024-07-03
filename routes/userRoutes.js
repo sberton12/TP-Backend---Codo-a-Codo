@@ -1,13 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
 const userController = require('../controller/userController')
+
+const upload = multer();
 
 router.get("/:id", userController.getUser);
 
-router.post("/create" , userController.createUser );
+router.post("/create" , upload.none(),userController.createUser );
 
-router.delete("/:id" , userController.deleteUser );
+router.delete("/:id" , upload.none(),userController.deleteUser );
 
-router.put("/:id" , userController.updateUser );
+router.put("/:id" , upload.none(),userController.updateUser );
 
 module.exports = router;

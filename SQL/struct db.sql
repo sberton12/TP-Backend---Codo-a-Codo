@@ -49,8 +49,8 @@ CREATE TABLE IF NOT EXISTS `userstable` (
   `surrname` VARCHAR(10) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `password` VARCHAR(20) NOT NULL,
-  `created_at` DATE NOT NULL,
-  `updated_at` DATE NOT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
+  `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`idUsersTable`))
 
 ENGINE = InnoDB
@@ -73,17 +73,21 @@ CREATE TABLE IF NOT EXISTS `commentstable` (
   `idCommentsTable` INT NOT NULL AUTO_INCREMENT,
   `user_id` INT NOT NULL,
   `content` VARCHAR(45) NULL DEFAULT NULL,
-  `created_at` DATE NULL DEFAULT NULL,
-  `updated_at` DATE NULL DEFAULT NULL,
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `toors_id` INT NOT NULL,
   `punctuation` DECIMAL(10,0) NULL DEFAULT NULL,
   PRIMARY KEY (`idCommentsTable`, `user_id`, `toors_id`),
   CONSTRAINT `fk_user_id`
-  FOREIGN KEY (`user_id`)
-    REFERENCES `mydb23`.`userstable` (`idUsersTable`),
+    FOREIGN KEY (`user_id`)
+    REFERENCES `mydb23`.`userstable` (`idUsersTable`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
   CONSTRAINT `fk_toors_id`
     FOREIGN KEY (`toors_id`)
-    REFERENCES `mydb23`.`travelstable` (`idTravelsTable`))
+    REFERENCES `mydb23`.`travelstable` (`idTravelsTable`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
@@ -102,11 +106,13 @@ CREATE TABLE IF NOT EXISTS `photostable` (
   `title` VARCHAR(45) NULL DEFAULT NULL,
   `description` VARCHAR(45) NULL DEFAULT NULL,
   `file_path` VARCHAR(255) NOT NULL,
-  `upload_date` DATE NULL DEFAULT NULL,
+  `upload_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`idPhotosTable`, `travels_id`),
   CONSTRAINT `fk_travels_id`
     FOREIGN KEY (`travels_id`)
-    REFERENCES `mydb23`.`travelstable` (`idTravelsTable`))
+    REFERENCES `mydb23`.`travelstable` (`idTravelsTable`)
+    ON DELETE NO ACTION
+    ON UPDATE CASCADE)  
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb3;
 
