@@ -59,6 +59,9 @@ DEFAULT CHARACTER SET = utf8mb3;
 
 SHOW WARNINGS;
 CREATE UNIQUE INDEX `idUsersTable_UNIQUE` ON `userstable` (`idUsersTable` ASC);
+CREATE UNIQUE INDEX `username_UNIQUE` ON `userstable` (`username` ASC);
+CREATE UNIQUE INDEX `email_UNIQUE` ON `userstable` (`email` ASC);
+
 
 -- -----------------------------------------------------
 -- Table `commentstable`
