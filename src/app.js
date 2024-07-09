@@ -1,24 +1,22 @@
 const express = require('express');
+const cors = require('cors');
+
 
 const userRoutes = require('../routes/userRoutes');
-const commentsRoutes = require('../routes/commentsRoutes.js/index.js');
+const commentsRoutes = require('../routes/commentsRoutes.js');
 const travelRoutes = require('../routes/travelRoutes.js');
+const contactRoutes = require('../routes/contactRoutes.js');
 
-const PORT = 3000;
+const PORT = process.env.PORT||3000;
 
 const app = express();
 app.use(express.json());
+app.use(cors());    
 
 app.use("/user", userRoutes);
 app.use("/comments", commentsRoutes);
 app.use("/travel", travelRoutes);
-
-
-// Ruta de prueba
-app.get('/', (req, res) => {
-    res.send('¡Hola, mundo!');
-});
-
+app.use("/contact", contactRoutes);
 
 
 app.listen( PORT, () => {
