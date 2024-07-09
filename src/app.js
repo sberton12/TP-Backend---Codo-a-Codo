@@ -18,6 +18,10 @@ app.use("/comments", commentsRoutes);
 app.use("/travel", travelRoutes);
 app.use("/contact", contactRoutes);
 
+// Ruta de prueba
+app.get('/', (req, res) => {
+    res.send('¡Hola, mundoasa!');
+});
 
 app.listen( PORT, () => {
     console.log("Server running at port: " + PORT);
